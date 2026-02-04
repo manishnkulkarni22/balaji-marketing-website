@@ -1,0 +1,36 @@
+<header class="site-header">
+  <div class="header-inner">
+
+    <!-- LOGO -->
+    <a href="#contact" class="book-darshan-btn">Balaji Darshan Pass Kendra.</a>
+
+    <!-- NAVIGATION -->
+    <nav class="main-nav">
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/about" routerLinkActive="active">About</a>
+      <a routerLink="/packages" routerLinkActive="active">Packages</a>
+      <a routerLink="/contact" routerLinkActive="active">Contact</a>
+    </nav>
+
+    <!-- RIGHT SIDE ACTIONS -->
+    <div class="header-right">
+  <button class="header-cta" (click)="goToContact()">
+    Book Darshan
+  </button>
+
+
+      <div class="header-actions">
+        <a href="https://facebook.com" target="_blank" title="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+        <a href="https://instagram.com" target="_blank" title="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="https://www.justdial.com" target="_blank" title="Justdial">
+          <i class="fa-solid fa-star"></i>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</header>

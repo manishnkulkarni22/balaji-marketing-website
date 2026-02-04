@@ -1,0 +1,248 @@
+<section class="hero-wrapper">
+  <!-- Text first -->
+  <div class="hero-content-top">
+    <h1>Divine Darshan & Spiritual Journeys</h1>
+    <p>
+      Experience peaceful and well-organized darshan packages
+      for Tirupati Balaji, Ujjain Mahakal and more.
+    </p>
+    <a routerLink="/packages" class="primary-btn">
+      View Packages
+    </a>
+  </div>
+
+  <!-- Slideshow -->
+  <section
+    class="hero-slideshow"
+    [ngStyle]="{'background-image': 'url(' + heroImages[currentHeroIndex] + ')'}">
+  </section>
+</section>
+
+<section class="home-packages">
+  <h2>Popular Darshan Packages</h2>
+  <p>Most preferred packages trusted by devotees</p>
+
+<div class="slider-wrapper">
+
+  <button class="nav-btn left" (click)="slideLeft()">‹</button>
+
+  <div class="packages-slider"
+     (mouseenter)="stopAutoScroll()"
+     (mouseleave)="startAutoScroll()">
+
+  <div class="slider-track" #slider>
+    <div class="slider-card"
+         *ngFor="let pkg of packages.concat(packages)">
+      <app-package-card [package]="pkg"></app-package-card>
+    </div>
+  </div>
+</div>
+
+  <button class="nav-btn right" (click)="slideRight()">›</button>
+
+</div>
+
+  <a routerLink="/packages" class="secondary-btn">
+    View All Packages →
+  </a>
+</section>
+
+<section class="updates">
+  <h2>Latest Updates</h2>
+
+  <div class="updates-list">
+    <div class="update-card">
+      <span class="date">April 2026</span>
+      <p>Tirupati Darshan bookings open for April–June</p>
+    </div>
+
+    <div class="update-card">
+      <span class="date">March 2026</span>
+      <p>Special Ujjain Mahakal packages now available</p>
+    </div>
+
+    <div class="update-card">
+      <span class="date">Ongoing</span>
+      <p>Family and group discounts available</p>
+    </div>
+  </div>
+</section>
+
+<section class="trust-section">
+  <div class="trust-container">
+
+    <div class="trust-item">
+      <span class="icon">🛕</span>
+      <p>Official Darshan Assistance</p>
+    </div>
+
+    <div class="trust-item">
+      <span class="icon">📜</span>
+      <p>Transparent Process</p>
+    </div>
+
+    <div class="trust-item">
+      <span class="icon">📞</span>
+      <p>WhatsApp Support</p>
+    </div>
+
+    <div class="trust-item">
+      <span class="icon">⭐</span>
+      <p>Trusted by 12Lakhs+ Devotees</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="reviews-section">
+  <h2>Trusted by Devotees Since 2007</h2>
+  <p class="reviews-subtitle">
+    Genuine experiences shared by families, senior citizens & group travelers
+  </p>
+
+  <div class="reviews-slider-wrapper">
+    <button class="nav-btn left" (click)="slideReviewLeft()">‹</button>
+
+    <div class="reviews-slider"
+         #reviewsSlider
+         (mouseenter)="stopReviewAutoScroll()"
+         (mouseleave)="startReviewAutoScroll()">
+
+      <div class="reviews-track">
+        <div class="review-card" *ngFor="let review of reviews">
+          <div class="review-header">
+            <img [src]="review.avatar" alt="{{review.name}}" /> <!-- ✅ Avatar dynamic -->
+            <div>
+              <h4>{{review.name}}</h4>
+              <span>{{review.location}}</span>
+            </div>
+          </div>
+      
+          <div class="stars">{{review.stars}}</div>
+          <p class="review-text">{{review.comment}}</p>
+          <span class="review-tag">{{review.tag}}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="nav-btn right" (click)="slideReviewRight()">›</button>
+  </div>
+</section>
+
+<section class="faq-section" id="faq">
+  <h2>Frequently Asked Questions</h2>
+
+  <div class="faq-container">
+
+    <details>
+      <summary>Is this an official TTD website?</summary>
+      <p>
+        No. We are a private darshan assistance and travel coordination service.
+        We help devotees with guidance, booking support, and end-to-end coordination.
+      </p>
+    </details>
+
+    <details>
+      <summary>Is darshan guaranteed?</summary>
+      <p>
+        Darshan depends on availability and temple regulations.
+        We always give clear information before confirmation and never make false promises.
+      </p>
+    </details>
+
+    <details>
+      <summary>How will I receive confirmation?</summary>
+      <p>
+        Our team contacts you directly on WhatsApp with complete details after enquiry submission.
+      </p>
+    </details>
+
+    <details>
+      <summary>Is this safe for senior citizens?</summary>
+      <p>
+        Yes. We regularly assist senior citizens and families and explain the entire process in advance.
+      </p>
+    </details>
+
+    <details>
+      <summary>What about payment and refund?</summary>
+      <p>
+        Payment terms, inclusions, and refund conditions are clearly explained before any confirmation.
+        No hidden charges.
+      </p>
+    </details>
+
+  </div>
+</section>
+
+<section id="contact" class="contact-section">
+  <div class="contact-container">
+
+    <h2>Book Your Darshan</h2>
+    <p class="subtitle">
+      Fill the form below and our team will contact you on WhatsApp
+    </p>
+
+    <form class="contact-form" (ngSubmit)="sendToWhatsApp()">
+
+      <input
+        type="text"
+        placeholder="Full Name"
+        name="name"
+        [(ngModel)]="formData.name"
+        required
+      />
+
+      <input
+        type="tel"
+        inputmode="numeric"
+        pattern="[0-9]{10}"
+        maxlength="10"
+        placeholder="Mobile Number"
+        name="phone"
+        [(ngModel)]="formData.phone"
+        required
+      />
+
+      <select name="package" [(ngModel)]="formData.package" required>
+        <option value="">Select Darshan Package</option>
+        <option>Tirupati Standard Package</option>
+        <option>Tirupati Comfort Package</option>
+        <option>Tirupati Premium Package</option>
+        <option>Flight Tirupati Package</option>
+        <option>Summer Special Tirupati Package</option>
+        <option>VIP Break Darshan Pass</option>
+        <option>Tirupati Darshan Pass</option>
+        <option>Ujjain Standard Package</option>
+        <option>Ujjain Comfort Package</option>
+        <option>Ujjain Premium Package</option>
+        <option>Flight Ujjain Package</option>
+        <option>Ujjain Darshan pass</option>
+        <option>Ujjain, Omkareshwar Darshan pass</option>
+        <option>Custom Package</option>
+      </select>
+
+      <textarea
+        rows="4"
+        placeholder="Message (optional)"
+        name="message"
+        [(ngModel)]="formData.message"
+      ></textarea>
+
+      <button
+        type="submit"
+        [disabled]="!formData.name || !formData.phone || !formData.package"
+      >
+        Send Enquiry
+      </button>
+
+      <p class="success-message" *ngIf="showSuccess">
+        ✅ Enquiry sent successfully! Our team will contact you on WhatsApp.
+      </p>
+
+    </form>
+  </div>
+</section>
+
+<!-- <h1>HOME WORKING</h1> -->

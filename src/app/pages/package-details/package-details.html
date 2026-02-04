@@ -1,0 +1,122 @@
+<div *ngIf="package; else notFound" class="package-details">
+
+  <!-- TITLE -->
+  <h1 class="package-title">{{ package.name }}</h1>
+
+  <!-- IMAGE -->
+  <div class="package-image-wrapper" *ngIf="package.image">
+    <img [src]="package.image" alt="{{ package.name }}" class="package-image" />
+  </div>
+  <!-- CTA Section -->
+<!-- <div class="package-cta">
+  <a href="tel:+919999999999" class="cta-btn call">
+    📞 Call Now
+  </a>
+
+  <a href="https://wa.me/918263986909?text=I%20am%20interested%20in%20this%20package" target="_blank"
+    class="cta-btn whatsapp">
+    💬 WhatsApp Enquiry
+  </a>
+</div> -->
+
+
+  <!-- BASIC INFO -->
+ <!-- INFO CARDS -->
+
+ <div class="info-grid">
+  <div class="info-card">
+    <span class="label">📍 Location</span>
+    <strong>{{ package.location }}</strong>
+  </div>
+
+  <div class="info-card">
+    <span class="label">🕉️ Type</span>
+    <strong>{{ package.type }}</strong>
+  </div>
+
+  <div class="info-card" *ngIf="package.duration">
+    <span class="label">⏱️ Duration</span>
+    <strong>{{ package.duration }}</strong>
+  </div>
+
+  <div class="info-card price-card">
+    <span class="label">💰 Starting Price</span>
+    <strong>{{ package.priceNote }}</strong>
+  </div>
+  </div>
+
+
+  <!-- SERVICES -->
+  <section class="section">
+    <h3>Services Included</h3>
+    <ul>
+      <li *ngFor="let s of package.services">{{ s }}</li>
+    </ul>
+  </section>
+
+  <!-- AVAILABILITY -->
+  <section class="section" *ngIf="package.availability">
+    <h3>Booking Availability</h3>
+    <p>{{ package.availability }}</p>
+  </section>
+
+  <!-- ITINERARY -->
+ <!-- ITINERARY -->
+<section class="section" *ngIf="package.itinerary?.length">
+  <h3 class="section-title">Detailed Itinerary</h3>
+
+  <div class="itinerary-accordion">
+    <details
+      class="itinerary-item"
+      *ngFor="let day of package.itinerary; let i = index"
+      [open]="i === 0"
+    >
+      <summary class="itinerary-header">
+        <span class="day-label">{{ day.day }}</span>
+        <span class="day-title">{{ day.title }}</span>
+      </summary>
+
+      <ul class="itinerary-points">
+        <li *ngFor="let point of day.description">
+          {{ point }}
+        </li>
+      </ul>
+    </details>
+  </div>
+</section>
+
+
+  <!-- IMPORTANT POINTS (PACKAGE LEVEL ONLY) -->
+  <section class="section" *ngIf="package.importantPoints?.length">
+    <h3>Important Points (Please Read)</h3>
+    <ul class="important-points">
+      <li *ngFor="let point of package.importantPoints">
+        {{ point }}
+      </li>
+    </ul>
+  </section>
+
+  <!-- STICKY CTA BAR -->
+<div class="cta-bar">
+  <div class="cta-price">
+    <span>Starting From</span>
+    <strong>{{ package.priceNote }}</strong>
+  </div>
+
+  <div class="cta-actions">
+    <a href="https://wa.me/918263986909" target="_blank" class="cta-btn whatsapp">
+      WhatsApp Enquiry
+    </a>
+
+    <a href="tel:+919373119654" class="cta-btn call">
+      Call Now
+    </a>
+  </div>
+</div>
+
+
+</div>
+
+<ng-template #notFound>
+  <p>Package not found.</p>
+</ng-template>

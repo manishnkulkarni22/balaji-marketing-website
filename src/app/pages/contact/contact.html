@@ -1,0 +1,32 @@
+<h2>Contact Us</h2>
+
+<form #contactForm="ngForm" (ngSubmit)="submitForm()" novalidate>
+    <div>
+        <label>
+            Name
+        </label><br />
+        <input type="text" name="name" [(ngModel)]="name" #nameRef="ngModel" required />
+
+        <div class="error" *ngIf="nameRef.invalid && nameRef.touched">
+            Name is required
+        </div>
+    </div>
+    <div>
+        <label>Phone</label><br />
+        <input type="tel" name="phone" [(ngModel)]="phone" #phoneRef="ngModel" required />
+
+        <div class="error" *ngIf="phoneRef.invalid && phoneRef.touched">
+            Phone is required
+        </div>
+    </div>
+
+    <div>
+        <label>Message</label><br />
+        <textarea [(ngModel)]="message" name="message">
+    </textarea>
+    </div>
+
+    <button type="submit" [disabled]="contactForm.invalid">
+        Submit
+    </button>
+</form>

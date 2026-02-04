@@ -1,0 +1,356 @@
+/* PAGE WRAPPER */
+.package-details {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 16px 60px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+    color: #222;
+}
+
+/* TITLE */
+.package-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+
+/* IMAGE */
+.package-image-wrapper {
+    width: calc(100% + 80px);
+    height: 420px;
+    margin-left: -40px;
+    margin-right: -40px;
+    border-radius: 28px;
+    overflow: hidden;
+}
+
+.package-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+/* META INFO */
+.package-meta {
+    background: #f9fafb;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.package-meta p {
+    margin: 6px 0;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0f766e;
+}
+
+/* SECTIONS */
+.section {
+    margin-top: 28px;
+}
+
+.section h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    border-left: 4px solid #0f766e;
+    padding-left: 10px;
+}
+
+/* SERVICES LIST */
+.section ul {
+    padding-left: 18px;
+}
+
+.section li {
+    margin-bottom: 6px;
+}
+
+/* ITINERARY */
+.itinerary {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.itinerary-day {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+}
+
+.itinerary-day h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* ITINERARY POINTS */
+.itinerary-points {
+    padding-left: 18px;
+}
+
+.itinerary-points li {
+    margin-bottom: 6px;
+}
+
+/* IMPORTANT POINTS */
+.important-points {
+    padding-left: 18px;
+}
+
+.important-points li {
+    margin-bottom: 8px;
+    color: #7c2d12;
+    font-weight: 500;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .package-image-wrapper {
+        width: 100%;
+        margin: 0;
+        height: 360px;
+        border-radius: 16px;
+    }
+
+    .package-image-wrapper {
+        height: 220px;
+    }
+
+    .package-meta {
+        padding: 14px;
+    }
+}
+/* INFO GRID */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+/* INFO CARD */
+.info-card {
+  background: #ffffff;
+  padding: 16px 18px;
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* LABEL */
+.info-card .label {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* VALUE */
+.info-card strong {
+  font-size: 16px;
+  color: #111827;
+}
+
+/* PRICE CARD SPECIAL */
+.price-card {
+  background: linear-gradient(135deg, #0a7a66, #0fb9a8);
+  color: #ffffff;
+}
+
+.price-card .label,
+.price-card strong {
+  color: #ffffff;
+}
+
+.price-card strong {
+  font-size: 18px;
+}
+/* CTA BAR */
+.cta-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 100vw;
+  background: #ffffff;
+  border-top: 1px solid #e5e7eb;
+  box-shadow: 0 -6px 20px rgba(0, 0, 0, 0.08);
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  z-index: 100;
+}
+
+
+/* PRICE */
+.cta-price span {
+  font-size: 13px;
+  color: #6b7280;
+}
+
+.cta-price strong {
+  font-size: 18px;
+  color: #0a7a66;
+  display: block;
+}
+
+/* ACTION BUTTONS */
+.cta-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.cta-btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  min-width: 120px;
+  text-align: center;
+}
+
+/* WHATSAPP */
+.cta-btn.whatsapp {
+  background: #25d366;
+  color: #ffffff;
+}
+
+/* CALL */
+.cta-btn.call {
+  background: #0a7a66;
+  color: #ffffff;
+}
+
+/* MOBILE ADJUSTMENT */
+@media (max-width: 768px) {
+  .cta-bar {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .cta-actions {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .cta-btn {
+    flex: 1;
+  }
+}
+.itinerary-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.itinerary-item {
+  background: #ffffff;
+  border-radius: 14px;
+  border: 1px solid #e5e7eb;
+  padding: 0;
+  overflow: hidden;
+}
+
+.itinerary-item summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.itinerary-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.itinerary-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 16px 18px;
+  background: #f9fafb;
+  font-weight: 600;
+}
+
+.day-label {
+  background: #0d9488;
+  color: #ffffff;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.day-title {
+  font-size: 15px;
+  color: #111827;
+}
+
+.itinerary-points {
+  padding: 16px 22px 18px;
+  margin: 0;
+}
+
+.itinerary-points li {
+  margin-bottom: 8px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.itinerary-points li:last-child {
+  margin-bottom: 0;
+}
+/* CTA container */
+/* .package-cta {
+  display: flex;
+  gap: 12px;
+  margin: 16px 0;
+} */
+
+/* CTA buttons */
+.cta-btn {
+  flex: 1;
+  padding: 14px;
+  text-align: center;
+  font-weight: 600;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #fff;
+}
+
+/* Call button */
+.cta-btn.call {
+  background: #1e88e5;
+}
+
+/* WhatsApp button */
+.cta-btn.whatsapp {
+  background: #25d366;
+}
+
+/* Sticky CTA for mobile
+@media (max-width: 768px) {
+  .package-cta {
+    position: sticky;
+    bottom: 0;
+    background: #fff;
+    padding: 12px;
+    box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+  }
+} */
+

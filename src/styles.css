@@ -1,1 +1,216 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+/* =========================
+   GLOBAL THEME VARIABLES
+========================= */
+
+:root {
+  --primary-color: #c9a23f;     /* Temple Gold */
+  --secondary-color: #1f5f3b;   /* Deep Green */
+  --text-primary: #222222;
+  --text-secondary: #555555;
+  --bg-light: #faf9f6;
+  --border-light: #e5e5e5;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+* {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  margin: 0;
+  color: var(--text-primary);
+  background-color: var(--bg-light);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+.btn-primary {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1, h2, h3 {
+  color: var(--text-primary);
+}
+
+html, body {
+  font-family: 'Poppins', sans-serif;
+  color: #444;
+  background-color: #fff;
+  line-height: 1.6;
+}
+:root {
+  --primary: #0a58ca;
+  --accent: #e63946;
+  --text-dark: #111;
+  --text-light: #666;
+  --border-light: #eee;
+}
+h1, h2, h3, h4, h5 {
+  color: var(--text-dark);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+p {
+  color: var(--text-light);
+  font-size: 15px;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+  border: none;
+}
+.sticky-cta {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column; /* 👈 vertical like reference */
+  gap: 12px;
+  z-index: 999;
+}
+.sticky-cta a {
+  padding: 16px 18px;
+  font-size: 12px;
+  border-radius: 124px;
+}
+.sticky-cta i {
+  font-size: 20px;
+}
+@media (max-width: 768px) {
+  .sticky-cta a {
+    padding: 12px;
+    border-radius: 14px;
+  }
+
+  .sticky-cta a span {
+    display: none;
+  }
+
+  .sticky-cta i {
+    font-size: 14px;
+  }
+}
+
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.sticky-cta:not(.hidden) {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+.contact-section {
+  padding: 80px 20px;
+  background: #f9fafb;
+}
+
+.contact-container {
+  max-width: 520px;
+  margin: auto;
+  background: #fff;
+  padding: 40px 32px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.contact-container h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.contact-container .subtitle {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 28px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 12px 14px;
+  font-size: 14px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  border-color: #e53935;
+}
+
+.contact-form button {
+  margin-top: 10px;
+  background: #e53935;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+  background: #d32f2f;
+}
+
 /* You can add global styles to this file, and also import other style files */

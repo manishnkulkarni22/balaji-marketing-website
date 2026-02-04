@@ -1,0 +1,43 @@
+<h2 class="page-title">Our Darshan Packages</h2>
+
+
+<!-- FILTER BAR -->
+<div class="filter-bar">
+  <button
+    (click)="setFilter('All')"
+    [class.active]="selectedLocation === 'All'">
+    All
+  </button>
+
+  <button
+    (click)="setFilter('Tirupati')"
+    [class.active]="selectedLocation === 'Tirupati'">
+    Tirupati
+  </button>
+
+  <button
+    (click)="setFilter('Ujjain')"
+    [class.active]="selectedLocation === 'Ujjain'">
+    Ujjain
+  </button>
+</div>
+
+<!-- PACKAGES GRID -->
+<div class="packages-grid" *ngIf="!isEmpty; else emptyState">
+  <app-package-card
+    *ngFor="let pkg of filteredPackages"
+    [package]="pkg">
+  </app-package-card>
+</div>
+
+<!-- EMPTY STATE -->
+<ng-template #emptyState>
+  <div class="empty-state">
+   <h3>No packages found</h3>
+<p>
+  We don’t have packages for this selection right now.<br>
+  Please try another location or contact us on WhatsApp.
+</p>
+  </div>
+</ng-template>
+

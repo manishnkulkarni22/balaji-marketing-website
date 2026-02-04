@@ -1,0 +1,58 @@
+<div class="card" [routerLink]="['/packages', package.id]" tabindex="0" role="button">
+
+  <!-- IMAGE -->
+  <div class="card-image" *ngIf="package.image">
+    <img [src]="package.image" [alt]="package.name" />
+  </div>
+<div class="package-tags" *ngIf="package.tags?.length">
+  <span *ngFor="let tag of package.tags" class="tag" [ngClass]="tag.toLowerCase().replace(' ', '-')">
+    <span class="icon">
+      {{ tag === 'Top Seller' ? '🔥' :
+      tag === 'Public Favorite' ? '⭐' :
+      tag === 'Highly Recommended' ? '✅' : '' }}
+    </span>
+    {{ tag }}
+  </span>
+</div>
+
+
+  <!-- CONTENT -->
+  <div class="card-content">
+
+    <!-- BADGE -->
+    <span class="badge" [ngClass]="package.type.toLowerCase().replace(' ', '-')">
+      {{ package.type }}
+    </span>
+
+    <!-- TITLE -->
+    <h3 class="title">{{ package.name }}</h3>
+
+    <!-- PRICE -->
+    <p class="price">{{ package.priceNote }}</p>
+
+    <!-- SERVICES -->
+    <div class="services">
+      <ul>
+        <li *ngFor="let service of visibleServices">
+          {{ service }}
+        </li>
+
+        <li *ngIf="hasMoreServices" class="more">
+          + More details inside
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- OPTIONAL TEXT -->
+    <p *ngIf="package.idealFor" class="ideal-for">
+      <strong>Ideal for:</strong> {{ package.idealFor }}
+    </p>
+
+    <!-- IMPORTANT: STOP CLICK PROPAGATION -->
+    <a class="enquire-btn" [href]="whatsappLink" target="_blank" (click)="$event.stopPropagation()">
+      Enquire on WhatsApp →
+    </a>
+
+  </div>
+</div>
