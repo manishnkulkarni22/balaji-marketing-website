@@ -1,33 +1,40 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule, NgIf],
+  imports: [FormsModule, CommonModule],
   templateUrl: './contact.html',
-  styleUrl: './contact.css',
+  styleUrls: ['./contact.css'],
 })
 export class Contact {
-
   name = '';
   phone = '';
   message = '';
+  showSuccess = false;
 
   submitForm() {
     if (!this.name || !this.phone) {
       return;
     }
 
-    const message =
-      `Name: ${this.name}\n` +
-      `Phone: ${this.phone}\n` +
-      `Message: ${this.message}`;
+    const text = `
+🙏 Darshan Enquiry
+Name: ${this.name}
+Mobile: ${this.phone}
+Message: ${this.message || 'NA'}
+    `.trim();
 
-    const whatsappUrl =
-      `https://wa.me/918263986909?text=${encodeURIComponent(message)}`;
-
+    const whatsappUrl = `https://wa.me/918263986909?text=${encodeURIComponent(text)}`;
     window.open(whatsappUrl, '_blank');
+
+    this.name = '';
+    this.phone = '';
+    this.message = '';
+
+    this.showSuccess = true;
+    setTimeout(() => (this.showSuccess = false), 3000);
   }
 }

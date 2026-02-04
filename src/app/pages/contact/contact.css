@@ -1,20 +1,52 @@
-form {
-  max-width: 400px;
-  margin: auto;
+.contact-page {
+  padding: 60px 16px;
+  display: flex;
+  justify-content: center;
 }
 
-input, textarea {
+.contact-box {
+  max-width: 420px;
   width: 100%;
-  margin-bottom: 8px;
-  padding: 8px;
+  background: #ffffff;
+  padding: 28px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
 }
 
-.error {
-  color: red;
-  font-size: 12px;
-  margin-bottom: 10px;
+h2 {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
 }
 
 button {
-  margin-top: 10px;
+  width: 100%;
+  padding: 12px;
+  background: #0a6cff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+button:disabled {
+  background: #b5c7f0;
+  cursor: not-allowed;
 }

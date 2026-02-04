@@ -1,32 +1,42 @@
-<h2>Contact Us</h2>
+<section class="contact-page">
+  <div class="contact-box">
 
-<form #contactForm="ngForm" (ngSubmit)="submitForm()" novalidate>
-    <div>
-        <label>
-            Name
-        </label><br />
-        <input type="text" name="name" [(ngModel)]="name" #nameRef="ngModel" required />
+    <h2>Contact Us</h2>
+    <p class="subtitle">
+      Share your details and we’ll connect with you on WhatsApp
+    </p>
 
-        <div class="error" *ngIf="nameRef.invalid && nameRef.touched">
-            Name is required
-        </div>
-    </div>
-    <div>
-        <label>Phone</label><br />
-        <input type="tel" name="phone" [(ngModel)]="phone" #phoneRef="ngModel" required />
+    <form (ngSubmit)="submitForm()">
 
-        <div class="error" *ngIf="phoneRef.invalid && phoneRef.touched">
-            Phone is required
-        </div>
-    </div>
+      <input
+        type="text"
+        placeholder="Full Name"
+        [(ngModel)]="name"
+        name="name"
+        required
+      />
 
-    <div>
-        <label>Message</label><br />
-        <textarea [(ngModel)]="message" name="message">
-    </textarea>
-    </div>
+      <input
+        type="tel"
+        placeholder="Mobile Number"
+        maxlength="10"
+        [(ngModel)]="phone"
+        name="phone"
+        required
+      />
 
-    <button type="submit" [disabled]="contactForm.invalid">
-        Submit
-    </button>
-</form>
+      <textarea
+        rows="4"
+        placeholder="Message (optional)"
+        [(ngModel)]="message"
+        name="message"
+      ></textarea>
+
+      <button type="submit" [disabled]="!name || !phone">
+        Send on WhatsApp
+      </button>
+
+    </form>
+
+  </div>
+</section>
