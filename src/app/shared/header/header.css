@@ -3,7 +3,7 @@
   top: 0;
   z-index: 1000;
   height: 72px;
-  background: #fff;
+  background: #fb873a; /* soft temple tone */
   border-bottom: 1px solid #eee;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
   display: flex;
