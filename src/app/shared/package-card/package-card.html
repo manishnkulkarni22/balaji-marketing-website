@@ -7,9 +7,7 @@
 <div class="package-tags" *ngIf="package.tags?.length">
   <span *ngFor="let tag of package.tags" class="tag" [ngClass]="tag.toLowerCase().replace(' ', '-')">
     <span class="icon">
-      {{ tag === 'Top Seller' ? '🔥' :
-      tag === 'Public Favorite' ? '⭐' :
-      tag === 'Highly Recommended' ? '✅' : '' }}
+      {{ tag === 'Highly Recommended' ? '✅' : '' }}
     </span>
     {{ tag }}
   </span>
@@ -25,7 +23,7 @@
     </span>
 
     <!-- TITLE -->
-    <h3 class="title">{{ package.name }}</h3>
+    <h3 class="title"><u>{{ package.name }}</u></h3>
 
     <!-- PRICE -->
     <p class="price">{{ package.priceNote }}</p>

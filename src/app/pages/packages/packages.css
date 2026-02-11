@@ -1,11 +1,11 @@
 
 .page-title {
-    margin-top: 40px;
+    /* margin-top: 40px; */
     margin-bottom: 16px;
     font-size: 1.6rem;
     font-weight: 600;
     color: #222;
-     padding-top: 40px;
+    padding-top: 40px;
   text-align: center;
 }
 /* Optional: page container safety */
@@ -33,7 +33,7 @@ main {
 .filter-bar button {
   padding: 8px 18px;
   border-radius: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffb703;
   background: #fff;
   cursor: pointer;
   font-size: 14px;
@@ -58,6 +58,9 @@ main {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 24px;
   align-items: stretch; /* VERY IMPORTANT */
+  border-bottom: 20px;
+  border-top: 20px;
+  padding: 20px;
 }
 .empty-state {
   text-align: center;

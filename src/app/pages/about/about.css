@@ -9,6 +9,7 @@
   max-width: 900px;
   margin: 0 auto 60px;
   text-align: center;
+  
 }
 .about-intro h1 {
   font-size: 34px;
@@ -20,11 +21,12 @@
   font-weight: bold;
   line-height: 1.8;
   color: #555;
+  margin-top: 20px;
   margin-bottom: 14px;
   display: flex;
   gap: 10px;
   align-items: flex-start;
-  border-bottom: 1px double rgba(18, 0, 0, 0.06);
+  /* border-bottom: 1px double rgba(18, 0, 0, 0.06); */
 }
 /* Cards */
 .about-cards {
@@ -41,6 +43,10 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border-left: 2px solid #ffb703;
+  border-right: 2px solid #ffb703;
+  border-top: 2px solid #ffb703;
+  border-bottom: 2px solid #ffb703;
 }
 .about-card:hover {
   transform: translateY(-4px);
