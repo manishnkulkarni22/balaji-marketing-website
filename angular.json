@@ -25,9 +25,9 @@
                 "input": "public"
               },
               {
-                "glob": "**/*",
-                "input": "src/_redirects",
-                "output": "_redirects"
+                "glob": "_redirects",
+                "input": "src",
+                "output": "/"
               },
               {
                 "glob": "**/*",
