@@ -26,6 +26,11 @@
               },
               {
                 "glob": "**/*",
+                "input": "src/_redirects",
+                "output": "_redirects"
+              },
+              {
+                "glob": "**/*",
                 "input": "src/assets",
                 "output": "assets"
               }
