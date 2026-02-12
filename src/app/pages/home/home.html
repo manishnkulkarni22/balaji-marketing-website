@@ -1,7 +1,7 @@
 <section class="hero-wrapper">
   <!-- Text first -->
 <section class="hero-simple">
-  <h1><u>Divine Darshan & Spiritual Journeys</u></h1>
+  <h1><u>🌸 Divine Darshan & Spiritual Journeys 🌸</u></h1>
   <p>
     Experience peaceful and well-organized darshan packages
     for Tirupati Balaji, Ujjain Mahakal and more.
@@ -18,7 +18,7 @@
 </section>
 
 <section class="home-packages">
-  <h2 class="section-title"><u>Popular Darshan Packages</u></h2>
+  <h2 class="section-title"><u>🛕 Popular Darshan Packages 🛕</u></h2>
   <p>Most preferred packages trusted by devotees</p>
 
 <div class="slider-wrapper">
@@ -47,7 +47,7 @@
 </section>
 
 <section class="updates">
-  <h2><u>Latest Updates</u></h2>
+  <h2><u> 📿 Latest Updates 📿 </u></h2>
 
   <div class="updates-list">
     <div class="update-card">
@@ -68,7 +68,7 @@
 </section>
 
 <section class="trust-section">
-  <h2><u>Why Devotees Trust Us</u></h2>
+  <h2><u> 🌸 Why Devotees Trust Us 🌸 </u></h2>
   <p class="trust-subtitle">
     Serving pilgrims with honesty, transparency, and care
   </p>
@@ -99,7 +99,7 @@
 </section>
 
 <section class="reviews-section">
-  <h2 class="section-title"><u>Wonderful Words</u></h2>
+  <h2 class="section-title"><u> ⭐ Wonderful Words ⭐ </u></h2>
   <h3>Trusted by Devotees Since 2007</h3>
   <p class="reviews-subtitle">
     Genuine experiences shared by families, senior citizens & group travelers
@@ -136,7 +136,7 @@
 </section>
 
 <section class="faq-section" id="faq">
-  <h2 class="section-title"><u>Frequently Asked Questions</u></h2>
+  <h2 class="section-title"><u> ❓ Frequently Asked Questions ❓ </u></h2>
 
   <div class="faq-container">
 
@@ -184,33 +184,33 @@
 <section id="contact" class="contact-section">
   <div class="contact-container">
 
-    <h2 class="section-title"><u>Book Your Darshan</u></h2>
+    <h2 class="section-title"><u> 📿 Book Your Darshan 📿 </u></h2>
     <p class="subtitle">
       Fill the form below and our team will contact you on WhatsApp
     </p>
 
-    <form class="contact-form" (ngSubmit)="sendToWhatsApp()">
+  <form #contactForm="ngForm" class="contact-form" (ngSubmit)="sendToWhatsApp(contactForm)">
 
-      <input
-        type="text"
-        placeholder="Full Name"
-        name="name"
-        [(ngModel)]="formData.name"
-        required
-      />
+  <input type="text" placeholder="Full Name" name="name" [(ngModel)]="formData.name" #name="ngModel" required />
+  
+  <div class="error" *ngIf="name.invalid && name.touched">
+    Full Name is required.
+  </div>
 
-      <input
-        type="tel"
-        inputmode="numeric"
-        pattern="[0-9]{10}"
-        maxlength="10"
-        placeholder="Mobile Number"
-        name="phone"
-        [(ngModel)]="formData.phone"
-        required
-      />
 
-      <select name="package" [(ngModel)]="formData.package" required>
+<input type="tel" inputmode="numeric" pattern="^[0-9]{10}$" maxlength="10" placeholder="Mobile Number" name="phone"
+  [(ngModel)]="formData.phone" #phone="ngModel" required />
+
+<div class="error" *ngIf="phone.touched && phone.invalid">
+  <span *ngIf="phone.errors?.['required']">
+    Mobile number is required.
+  </span>
+  <span *ngIf="phone.errors?.['pattern']">
+    Mobile number must be 10 digits.
+  </span>
+</div>
+
+    <select name="package" [(ngModel)]="formData.package" #package="ngModel" required>
         <option value="">Select Darshan Package</option>
         <option>Tirupati Standard Package</option>
         <option>Tirupati Comfort Package</option>
@@ -226,21 +226,29 @@
         <option>Ujjain Darshan pass</option>
         <option>Ujjain, Omkareshwar Darshan pass</option>
         <option>Custom Package</option>
+        <div class="error" *ngIf="package.invalid && package.touched">
+          Please select a package.
+        </div>
       </select>
 
-      <textarea
-        rows="4"
-        placeholder="Message (optional)"
-        name="message"
-        [(ngModel)]="formData.message"
-      ></textarea>
+      <textarea rows="4" placeholder="Message (optional)" name="message" [(ngModel)]="formData.message" #message="ngModel"
+        maxlength="500"></textarea>
+        <div class="char-count">
+          {{ formData.message.length || 0 }}/500 characters
+        </div>
+        <div class="error" *ngIf="message.errors?.['maxlength']">
+          Message cannot exceed 500 characters.
+        </div>
 
-      <button
-        type="submit"
-        [disabled]="!formData.name || !formData.phone || !formData.package"
-      >
-        Send Enquiry
-      </button>
+    <button type="submit" [disabled]="contactForm.invalid || isSubmitting">
+      <span *ngIf="!isSubmitting">Send Enquiry</span>
+    
+      <span *ngIf="isSubmitting" class="spinner-container">
+        <span class="spinner"></span>
+        Sending...
+      </span>
+    </button>
+  
 
       <p class="success-message" *ngIf="showSuccess">
         ✅ Enquiry sent successfully! Our team will contact you on WhatsApp.

@@ -25,6 +25,7 @@ export class Home implements OnInit, AfterViewInit, OnDestroy {
   private reviewAutoScrollTimer: any;
   currentHeroIndex = 0;
   heroInterval: any;
+  isSubmitting = false;
 
   @ViewChild('slider', { static: false })
   slider!: ElementRef<HTMLDivElement>;
@@ -108,31 +109,42 @@ startHeroSlideshow() {
     }
   }, 5000); // Change every 5 seconds
 }
-  sendToWhatsApp() {
-    const text = `
+sendToWhatsApp(form: any) {
+  if (form.invalid || this.isSubmitting) {
+    Object.values(form.controls).forEach((control: any) => {
+      control.markAsTouched();
+    });
+    return;
+  }
+
+  this.isSubmitting = true;
+
+  const text = `
 🙏 Darshan Enquiry
 Name: ${this.formData.name}
 Mobile: ${this.formData.phone}
 Package: ${this.formData.package}
 Message: ${this.formData.message || 'NA'}
-    `.trim();
+  `.trim();
 
-    const url = `https://wa.me/918263986909?text=${encodeURIComponent(text)}`;
+  const url = `https://wa.me/918263986909?text=${encodeURIComponent(text)}`;
+
+  setTimeout(() => {
     window.open(url, '_blank');
+    form.resetForm();
+    this.isSubmitting = false;
+    this.showToast();
+  }, 800); // small delay for UX feel
+}
+showToast() {
+  this.showSuccess = true;
 
-    this.formData = {
-      name: '',
-      phone: '',
-      package: '',
-      message: ''
-    };
+  setTimeout(() => {
+    this.showSuccess = false;
+  }, 3000);
+}
 
-    this.showSuccess = true;
 
-    setTimeout(() => {
-      this.showSuccess = false;
-    }, 3000);
-  }
   ngAfterViewInit() {
   // wait for DOM to settle
    this.startReviewAutoScroll();

@@ -8,8 +8,8 @@
   max-width: 1200px;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 30px;
+  grid-template-columns: 1fr 1fr 1.2fr 0.8fr;
+  gap: 50px;
 }
 
 .footer-section h4 {
@@ -19,7 +19,7 @@
 
 .footer-section p,
 .footer-section a {
-  font-size: 14px;
+  font-size: 15px;
   color: #f1f1f1;
 }
 
@@ -31,25 +31,39 @@
 .footer-bottom {
   text-align: center;
   margin-top: 30px;
-  font-size: 13px;
+  font-size: 15px;
   opacity: 0.85;
 }
-.map-link {
-  display: block;
-  margin-top: 8px;
-  text-decoration: none;
-  color: #fff;
-}
-
-.map-link iframe {
+.map-container {
+  position: relative;
   width: 100%;
-  height: 140px;
-  border: 0;
-  border-radius: 10px;
-  margin-bottom: 6px;
+  padding-bottom: 70%; /* aspect ratio */
+  border-radius: 14px;
+  border: 2px solid #ffb703;;
+  overflow: hidden;
+  margin-top: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
 }
 
-.map-link span {
-  font-size: 13px;
-  color: #c9a23f;
+.map-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
+
+.map-button {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #c9a23f;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.map-button:hover {
+  text-decoration: underline;
+}
+

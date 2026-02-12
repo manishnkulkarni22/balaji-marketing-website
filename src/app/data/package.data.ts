@@ -445,7 +445,7 @@ export const PACKAGES: PackageItem[] = [
       'Local Sightseeing and Complete Amenity Package.'
     ],
 
-    priceNote: 'Starting from ₹3500 per person',
+    priceNote: 'Starting from ₹15000 per person',
     duration: '📅 5 Days / 4 Nights',
     idealFor: 'First-time darshan, families, group travellers',
     image: 'assets/images/summerTirupati.jpg',
