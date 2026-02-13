@@ -85,15 +85,20 @@ reviews = [
   }
 ];
 heroImages = [
+  'assets/images/slideshow1.jpg',
+  'assets/images/slideshow2.jpg',
   'assets/images/slideshowTirupathi3.jpg',
   'assets/images/slideshowTirupathi5.jpg',
   'assets/images/slideshowUjjain1.jpg',
+  'assets/images/slideshow3.jpg',
+  'assets/images/slideshow4.jpg',
   'assets/images/slideshowTiruathi1.jpg',
+  'assets/images/slideshow5.jpg',
+  'assets/images/slideshow6.jpg',
   'assets/images/slideshowTirupathi6.jpg',
-  'assets/images/slideshowUjjain2.jpg', 
-  'assets/images/slideshowTirupathi4.jpg',
   'assets/images/slideshowTirupati2.jpg',
-  'assets/images/slideshowAyodhya1.jpg',
+  'assets/images/slideshow7.jpg',
+  'assets/images/slideshow8.jpg',
 ];
   ngOnInit() {
   this.packages = this.packageService

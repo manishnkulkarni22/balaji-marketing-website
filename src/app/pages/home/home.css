@@ -13,7 +13,7 @@
 }
 .hero-section {
   width: 100%;
-  padding: 60px 20px;
+  /* padding: 10px 20px; */
 
   background: linear-gradient(
     90deg,
@@ -145,6 +145,7 @@
 .updates h2 {
   text-align: center;
   margin-bottom: 2rem;
+  font-size: 36px;
 }
 
 .updates-list {
@@ -251,6 +252,11 @@
 .trust-section {
   padding: 40px 20px;
   background: #fff6e5; /* soft temple tone */
+}
+.trust-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 36px;
 }
 
 .trust-subtitle {
@@ -402,7 +408,8 @@
 .packages-slider {
   display: flex;
   position: relative;
-  overflow: hidden; /* container only */
+  overflow-x: auto; /* container only */
+  z-index: 1;
 }
 
 .slider-track::-webkit-scrollbar {
@@ -452,28 +459,53 @@
 }
 
 /* NAV BUTTONS */
-.nav-btn {
+/* 1. Ensure the parent of these buttons is relative */
+.packages-slider-container {
+  position: relative;
+  width: 100%;
+  padding: 0 20px; /* Gives buttons some breathing room */
+  position: relative;
+  z-index: 1; /* Keep the slider lower than the buttons */
+  overflow: hidden;
+}
+
+/* 2. Unified button styles */
+.nav-btn { 
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 5;
+  z-index: 999; /* Forces it to the front */
   background: #fff;
-  border: none;
-  font-size: 28px;
-  width: 42px;
-  height: 42px;
+  border: 1px solid #ddd;
+  font-size: 24px;
+  width: 45px;
+  height: 45px;
   border-radius: 50%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  z-index: 9999; /* Force it above everything else */
+  pointer-events: auto; /* Explicitly tell the browser this is clickable */
+  cursor: pointer;
 }
 
+/* 3. Specific Positioning */
 .nav-btn.left {
-  left: -10px;
+  left: 10px; /* Inside the left edge */
 }
 
 .nav-btn.right {
-  right: -10px;
+  right: 40px; /* Inside the right edge */
 }
+
+.nav-btn:hover {
+  background: #f2f2f2;
+  color: #ff6600; /* Match your theme orange if you like */
+}
+
 
 /* Hide arrows on mobile */
 @media (max-width: 767px) {
@@ -502,26 +534,13 @@
 }
 }
 
-.nav-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #fff;
-  border: none;
-  font-size: 28px;
-  padding: 6px 12px;
-  cursor: pointer;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
+
 
 .slider-wrapper:hover .nav-btn {
   opacity: 1;
 }
 
-.nav-btn.left { left: 0; }
-.nav-btn.right { right: 0; }
+
 
 @media (max-width: 768px) {
   .nav-btn { display: none; }
@@ -535,28 +554,6 @@
   margin-bottom: 15px;
 }
 
-.nav-btn {
-  background: #fff;
-  border: 1px solid #ddd;
-  font-size: 24px;
-  padding: 6px 12px;
-  cursor: pointer;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .15);
-  z-index: 5;
-}
-
-.nav-btn.left {
-  margin-right: 8px;
-}
-
-.nav-btn.right {
-  margin-left: 8px;
-}
-
-.nav-btn:hover {
-  background: #f2f2f2;
-}
 .reviews-section {
   padding: 60px 20px;
   background: #fff6e5; /* soft temple tone */
@@ -681,6 +678,39 @@
   overflow: hidden;
   padding: 10px 0;
 }
+/* 1. Fix the "Jumping to Header" issue */
+.reviews-slider-wrapper {
+  position: relative; /* This keeps the absolute buttons inside this box */
+  margin: 40px auto;
+  max-width: 1200px;
+  padding: 0 50px; /* Creates a "gutter" for the buttons to sit in */
+  display: block;  /* Changed from flex to block to prevent layout squashing */
+}
+
+/* 2. Fix the "Half-Clickable" issue */
+.reviews-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  z-index: 1; /* Keep content lower than buttons */
+}
+
+/* 3. Specific Review Button overrides */
+.reviews-slider-wrapper .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10; /* Ensures buttons are on top of cards */
+  pointer-events: auto; /* Ensures the whole circle responds to clicks */
+}
+
+.reviews-slider-wrapper .nav-btn.left {
+  left: 0; /* Positioned in the left padding gutter */
+}
+
+.reviews-slider-wrapper .nav-btn.right {
+  right: 0; /* Positioned in the right padding gutter */
+}
 
 .review-card {
   background: #fff;
@@ -704,13 +734,16 @@
   object-fit: cover;
 }
 .hero-simple {
-  padding: 20px 20px 40px;
+  padding-top: 10px; 
+  padding-right: 10px; 
+  padding-bottom: 10px;  
+  padding-left: 10px;
   text-align: center;
   background: #fff6e5; /* soft temple tone */
 }
 
 .hero-simple h1 {
-  font-size: 32px;
+  font-size: 40px;
   margin-bottom: 12px;
 }
 
@@ -720,19 +753,7 @@
   color: #444;
 }
 
-.nav-btn {
-  background: #fff;
-  border: 1px solid #ddd;
-  font-size: 24px;
-  padding: 6px 12px;
-  cursor: pointer;
-  border-radius: 50%;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  z-index: 5;
-}
 
-.nav-btn.left { margin-right: 8px; }
-.nav-btn.right { margin-left: 8px; }
 .hero-content-top {
   max-width: 900px;
   margin: 0 auto;
@@ -826,6 +847,7 @@ section p {
   /* position: center; */
   display: inline-block;
   margin-bottom: 40px;
+  font-size: 36px;
 }
 
 /* .section-title::after {
@@ -899,4 +921,28 @@ section:last-of-type {
     transform: translateY(0);
     opacity: 1;
   }
+}
+.home-container {
+  position: relative;
+}
+
+.page-decor-left,
+.page-decor-right {
+  position: absolute;   /* 🔥 change from fixed */
+  top: 150px;
+  width: 260px;
+  background: url('/assets/images/temple-outline.jpg') no-repeat center;
+  /* opacity: 0.06; */
+  filter: grayscale(100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-decor-left {
+  left: 0;
+}
+
+.page-decor-right {
+  right: 0;
+  transform: scaleX(-1);
 }

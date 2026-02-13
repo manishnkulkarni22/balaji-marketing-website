@@ -1,36 +1,18 @@
 <section class="contact-page">
   <div class="contact-box">
 
-    <h2><u>Contact Us</u></h2>
+    <h2>Contact Us</h2>
     <p class="subtitle">
       Share your details and we’ll connect with you on WhatsApp
     </p>
 
     <form (ngSubmit)="submitForm()">
 
-      <input
-        type="text"
-        placeholder="Full Name"
-        [(ngModel)]="name"
-        name="name"
-        required
-      />
+      <input type="text" placeholder="Full Name" [(ngModel)]="name" name="name" required />
 
-      <input
-        type="tel"
-        placeholder="Mobile Number"
-        maxlength="10"
-        [(ngModel)]="phone"
-        name="phone"
-        required
-      />
+      <input type="tel" placeholder="Mobile Number" maxlength="10" [(ngModel)]="phone" name="phone" required />
 
-      <textarea
-        rows="4"
-        placeholder="Message (optional)"
-        [(ngModel)]="message"
-        name="message"
-      ></textarea>
+      <textarea rows="4" placeholder="Message (optional)" [(ngModel)]="message" name="message"></textarea>
 
       <button type="submit" [disabled]="!name || !phone">
         Send on WhatsApp
@@ -38,5 +20,19 @@
 
     </form>
 
+  </div>
+  <div class="footer-section">
+    <h4>Contact</h4>
+    <p>📞 +91 9373119654</p>
+    <p>📞 +91 9130773175</p>
+    <p>💬 +91 8263986909</p>
+    <p>📧 aumtele@gmail.com</p>
+    <p>📍 Kasba Peth, Pune, Maharashtra</p>
+    <div class="footer-section">
+      <h4>Office Location</h4>
+      <a href="https://share.google/Wc05JGfW0bSySPr2z" target="_blank" rel="noopener" class="map-button">
+        📍 View on Google Maps
+      </a>
+    </div>
   </div>
 </section>

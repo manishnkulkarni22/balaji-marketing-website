@@ -2,7 +2,8 @@
   padding: 60px 16px;
   display: flex;
   justify-content: center;
-  background: #fff6e5; /* soft temple tone */
+  background: #fff6e5;
+  padding: 40px 20px 20px; /* soft temple tone */
 }
 
 .contact-box {
@@ -13,6 +14,9 @@
   border-radius: 12px;
   border: 2px solid #ffb703;
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 40px 20px 20px;
+  /* margin-left: auto; */
+  margin-right: 120px;
 }
 
 h2 {
@@ -53,4 +57,62 @@ button {
 button:disabled {
   background: #b5c7f0;
   cursor: not-allowed;
+}
+.app-footer {
+  background: #20603c; /* Deep Green */
+  color: #fff;
+  padding: 40px 20px 20px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1.2fr 0.8fr;
+  gap: 50px;
+}
+
+.footer-section {
+  max-width: 420px;
+  width: 100%;
+  /* background: #ffffff; */
+  /* padding: 28px; */
+  padding: 40px 20px 20px;
+}
+
+
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #c9a23f; /* Temple Gold */
+}
+
+.footer-section p,
+.footer-section a {
+  font-size: 22px;
+  color: #000;
+  justify-content: center;
+}
+.sticky-cta .whatsapp {
+  background: linear-gradient(135deg, #25d366, #1ebe5d);
+}
+.footer-section a {
+  font-size: 22px;
+  display: block;
+  margin-top: 6px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 15px;
+  opacity: 0.85;
+}
+.map-button {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  color: #c9a23f;
+  text-decoration: none;
+  transition: 0.3s;
 }

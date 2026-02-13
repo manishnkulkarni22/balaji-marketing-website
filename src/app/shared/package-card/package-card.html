@@ -6,9 +6,6 @@
   </div>
 <div class="package-tags" *ngIf="package.tags?.length">
   <span *ngFor="let tag of package.tags" class="tag" [ngClass]="tag.toLowerCase().replace(' ', '-')">
-    <span class="icon">
-      {{ tag === 'Highly Recommended' ? '✅' : '' }}
-    </span>
     {{ tag }}
   </span>
 </div>

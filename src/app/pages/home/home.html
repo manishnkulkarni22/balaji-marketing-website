@@ -1,7 +1,8 @@
+
 <section class="hero-wrapper">
   <!-- Text first -->
 <section class="hero-simple">
-  <h1><u>🌸 Divine Darshan & Spiritual Journeys 🌸</u></h1>
+  <h1>🌸 Divine Darshan & Spiritual Journeys 🌸</h1>
   <p>
     Experience peaceful and well-organized darshan packages
     for Tirupati Balaji, Ujjain Mahakal and more.
@@ -11,33 +12,32 @@
   </a>
 </section>
   <!-- Slideshow -->
-  <section
-    class="hero-slideshow"
-    [ngStyle]="{'background-image': 'url(' + heroImages[currentHeroIndex] + ')'}">
+  <section class="hero-slideshow" [ngStyle]="{'background-image': 'url(' + heroImages[currentHeroIndex] + ')'}">
   </section>
 </section>
 
 <section class="home-packages">
-  <h2 class="section-title"><u>🛕 Popular Darshan Packages 🛕</u></h2>
+  <h2 class="section-title">🛕 Popular Darshan Packages 🛕</h2>
   <p>Most preferred packages trusted by devotees</p>
 
 <div class="slider-wrapper">
 
+ <div class="packages-slider-container">
+  
   <button class="nav-btn left" (click)="slideLeft()">‹</button>
 
-  <div class="packages-slider"
-     (mouseenter)="stopAutoScroll()"
-     (mouseleave)="startAutoScroll()">
-
-  <div class="slider-track" #slider>
-    <div class="slider-card"
-         *ngFor="let pkg of packages.concat(packages)">
-      <app-package-card [package]="pkg"></app-package-card>
+  <div class="packages-slider" (mouseenter)="stopAutoScroll()" (mouseleave)="startAutoScroll()">
+    <div class="slider-track" #slider>
+      <div class="slider-card" *ngFor="let pkg of packages.concat(packages)">
+        <app-package-card [package]="pkg"></app-package-card>
+      </div>
     </div>
   </div>
-</div>
 
   <button class="nav-btn right" (click)="slideRight()">›</button>
+
+
+</div>
 
 </div>
 
@@ -47,7 +47,8 @@
 </section>
 
 <section class="updates">
-  <h2><u> 📿 Latest Updates 📿 </u></h2>
+  <div class="page-decor-left"></div>
+   <h2> 📿 Latest Updates 📿 </h2>
 
   <div class="updates-list">
     <div class="update-card">
@@ -65,10 +66,12 @@
       <p>Family and group discounts available for Customised Tours</p>
     </div>
   </div>
+
+  <div class="page-decor-right"></div>
 </section>
 
 <section class="trust-section">
-  <h2><u> 🌸 Why Devotees Trust Us 🌸 </u></h2>
+   <h2> 🌸 Why Devotees Trust Us 🌸 </h2>
   <p class="trust-subtitle">
     Serving pilgrims with honesty, transparency, and care
   </p>
@@ -99,7 +102,7 @@
 </section>
 
 <section class="reviews-section">
-  <h2 class="section-title"><u> ⭐ Wonderful Words ⭐ </u></h2>
+  <h2 class="section-title"> ⭐ Wonderful Words ⭐ </h2>
   <h3>Trusted by Devotees Since 2007</h3>
   <p class="reviews-subtitle">
     Genuine experiences shared by families, senior citizens & group travelers
@@ -136,7 +139,7 @@
 </section>
 
 <section class="faq-section" id="faq">
-  <h2 class="section-title"><u> ❓ Frequently Asked Questions ❓ </u></h2>
+  <h2 class="section-title"> ❓ Frequently Asked Questions ❓ </h2>
 
   <div class="faq-container">
 
@@ -184,7 +187,7 @@
 <section id="contact" class="contact-section">
   <div class="contact-container">
 
-    <h2 class="section-title"><u> 📿 Book Your Darshan 📿 </u></h2>
+    <h2 class="section-title"> 📿 Book Your Darshan 📿 </h2>
     <p class="subtitle">
       Fill the form below and our team will contact you on WhatsApp
     </p>
