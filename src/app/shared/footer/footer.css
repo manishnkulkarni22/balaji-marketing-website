@@ -2,8 +2,10 @@
   background: #20603c; /* Deep Green */
   color: #fff;
   padding: 40px 20px 20px;
+  position: relative;   /* ✅ ADD THIS */
+  overflow: hidden; 
 }
-
+ 
 .footer-content {
   max-width: 1200px;
   margin: auto;
@@ -66,4 +68,26 @@
 .map-button:hover {
   text-decoration: underline;
 }
+.temple1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+   width: 240px;
+  height: 560px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.70;
+  z-index: 0;
+}
 
+/* Left temple */
+.temple1-left {
+  left: 0;
+}
+
+/* Right temple */
+.temple1-right {
+  right: 0;
+  /* transform: translateY(-50%) scaleX(-1); */
+}

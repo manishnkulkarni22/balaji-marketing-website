@@ -116,3 +116,26 @@ button:disabled {
   text-decoration: none;
   transition: 0.3s;
 }
+.temple3 {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  width: 240px;
+  height: 320px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+/* Left */
+.temple3-left {
+  left: 0;
+}
+
+/* Right */
+.temple3-right {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}

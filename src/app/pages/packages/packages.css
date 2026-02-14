@@ -86,3 +86,28 @@ main {
   min-height: 100vh;
   background: #fff6e5; /* soft temple tone */
 }
+/* Temple common */
+.temple {
+  position: absolute;
+  top: 20%;
+  transform: translateY(-50%);
+  width: 320px;
+  height: 260px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.75;
+  z-index: 1;
+}
+
+/* Left */
+.temple-left {
+  left: 0;
+}
+
+/* Right */
+.temple-right {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}
+

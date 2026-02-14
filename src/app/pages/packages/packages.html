@@ -1,3 +1,6 @@
+<div class="temple temple-left"
+       [style.background-image]="'url(/assets/images/balajiSymbol2.png)'">
+  </div>
 <h2 class="page-title"> 🛕 Our Darshan Packages 🛕 </h2>
 
 <!-- FILTER BAR -->
@@ -20,7 +23,9 @@
     Ujjain
   </button>
 </div>
-
+<div class="temple temple-right"
+       [style.background-image]="'url(/assets/images/balajiSymbol2.png)'">
+  </div>
 <!-- PACKAGES GRID -->
 <div class="packages-grid" *ngIf="!isEmpty; else emptyState">
   <app-package-card

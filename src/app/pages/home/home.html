@@ -2,21 +2,35 @@
 <section class="hero-wrapper">
   <!-- Text first -->
 <section class="hero-simple">
-  <h1>🌸 Divine Darshan & Spiritual Journeys 🌸</h1>
-  <p>
-    Experience peaceful and well-organized darshan packages
-    for Tirupati Balaji, Ujjain Mahakal and more.
-  </p>
-  <a routerLink="/packages" class="primary-btn">
-    View Packages
-  </a>
+
+  <div class="temple temple-left"
+       [style.background-image]="'url(/assets/images/slideshow1.jpg)'">
+  </div>
+
+  <div class="hero-content">
+    <h1>🌸 Divine Darshan & Spiritual Journeys 🌸</h1>
+    <p>
+      Experience peaceful and well-organized darshan packages
+      for Tirupati Balaji, Ujjain Mahakal and more.
+    </p>
+    <a routerLink="/packages" class="primary-btn">
+      View Packages
+    </a>
+  </div>
+
+  <div class="temple temple-right"
+       [style.background-image]="'url(/assets/images/slideshow1.jpg)'">
+  </div>
+
 </section>
+
   <!-- Slideshow -->
   <section class="hero-slideshow" [ngStyle]="{'background-image': 'url(' + heroImages[currentHeroIndex] + ')'}">
   </section>
 </section>
 
 <section class="home-packages">
+  
   <h2 class="section-title">🛕 Popular Darshan Packages 🛕</h2>
   <p>Most preferred packages trusted by devotees</p>
 
@@ -47,7 +61,9 @@
 </section>
 
 <section class="updates">
-  <div class="page-decor-left"></div>
+  <div class="temple1 temple1-left"
+       [style.background-image]="'url(/assets/images/temple-outline.png)'">
+  </div>
    <h2> 📿 Latest Updates 📿 </h2>
 
   <div class="updates-list">
@@ -67,10 +83,18 @@
     </div>
   </div>
 
-  <div class="page-decor-right"></div>
+  <div class="temple1 temple1-right"
+       [style.background-image]="'url(/assets/images/temple-outline.png)'">
+  </div>
 </section>
 
-<section class="trust-section">
+<section class="trust-section"> 
+
+  <!-- LEFT TEMPLE IMAGE -->
+  <div class="temple2 temple2-left"
+       style="background-image: url('/assets/images/elephantSymbol.png');">
+  </div>
+
    <h2> 🌸 Why Devotees Trust Us 🌸 </h2>
   <p class="trust-subtitle">
     Serving pilgrims with honesty, transparency, and care
@@ -99,46 +123,55 @@
     </div>
 
   </div>
+
+  <!-- RIGHT TEMPLE IMAGE -->
+  <div class="temple2 temple2-right"
+       style="background-image: url('/assets/images/elephantSymbol.png');">
+  </div>
+
 </section>
 
 <section class="reviews-section">
+
+  <!-- LEFT TEMPLE -->
+  <div class="temple3 temple3-left"
+       style="background-image: url('/assets/images/balajiSymbol1.png');">
+  </div>
+
   <h2 class="section-title"> ⭐ Wonderful Words ⭐ </h2>
   <h3>Trusted by Devotees Since 2007</h3>
   <p class="reviews-subtitle">
     Genuine experiences shared by families, senior citizens & group travelers
   </p>
-
-  <div class="reviews-slider-wrapper">
+  <div class="reviews-slider-wrapper"> 
     <button class="nav-btn left" (click)="slideReviewLeft()">‹</button>
-
-    <div class="reviews-slider"
-         #reviewsSlider
-         (mouseenter)="stopReviewAutoScroll()"
-         (mouseleave)="startReviewAutoScroll()">
-
+    <div class="reviews-slider" #reviewsSlider (mouseenter)="stopReviewAutoScroll()"
+      (mouseleave)="startReviewAutoScroll()">
       <div class="reviews-track">
         <div class="review-card" *ngFor="let review of reviews">
-          <div class="review-header">
-            <img [src]="review.avatar" alt="{{review.name}}" /> <!-- ✅ Avatar dynamic -->
+          <div class="review-header"> <img [src]="review.avatar" alt="{{review.name}}" /> <!-- ✅ Avatar dynamic -->
             <div>
-              <h4>{{review.name}}</h4>
-              <span>{{review.location}}</span>
+              <h4>{{review.name}}</h4> <span>{{review.location}}</span>
             </div>
           </div>
-      
           <div class="stars">{{review.stars}}</div>
-          <p class="review-text">{{review.comment}}</p>
-          <span class="review-tag">{{review.tag}}</span>
+          <p class="review-text">{{review.comment}}</p> <span class="review-tag">{{review.tag}}</span>
         </div>
       </div>
-
     </div>
-
     <button class="nav-btn right" (click)="slideReviewRight()">›</button>
+</div>
+  <!-- RIGHT TEMPLE -->
+  <div class="temple3 temple3-right"
+       style="background-image: url('/assets/images/balajiSymbol1.png');">
   </div>
+
 </section>
 
 <section class="faq-section" id="faq">
+   <div class="temple4 temple4-left"
+       style="background-image: url('/assets/images/temple-outline.png');">
+  </div>
   <h2 class="section-title"> ❓ Frequently Asked Questions ❓ </h2>
 
   <div class="faq-container">
@@ -182,9 +215,15 @@
     </details>
 
   </div>
+   <div class="temple4 temple4-right"
+       style="background-image: url('/assets/images/balajiSymbol.png');">
+  </div>
 </section>
 
 <section id="contact" class="contact-section">
+  <div class="temple5 temple5-left"
+       style="background-image: url('/assets/images/balajiSymbol.png');">
+  </div>
   <div class="contact-container">
 
     <h2 class="section-title"> 📿 Book Your Darshan 📿 </h2>
@@ -257,6 +296,9 @@
         ✅ Enquiry sent successfully! Our team will contact you on WhatsApp.
       </p>
 
-    </form>
+    </form> 
+  </div>
+  <div class="temple5 temple5-right"
+       style="background-image: url('/assets/images/temple-outline.png');">
   </div>
 </section>

@@ -36,7 +36,7 @@
 .hero-content {
   position: relative;
   max-width: 700px;
-  padding: 2rem;
+  /* padding: 2rem; */
   z-index: 2;
 }
 
@@ -94,7 +94,7 @@
 .hero-content {
   position: relative;
   max-width: 700px;
-  padding: 2rem;
+  /* padding: 2rem; */
 }
 
 .hero h1 {
@@ -138,9 +138,43 @@
 }
 
 .updates {
+  position: relative;   /* important */
   padding: 3rem 2rem;
-  background: #fff6e5; /* soft temple tone */
+  overflow: hidden;     /* prevents layout break */
 }
+
+/* Common temple styling */
+.temple1 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+   width: 360px;
+  height: 560px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.70;
+  z-index: 0;
+}
+
+/* Left temple */
+.temple1-left {
+  left: 0;
+}
+
+/* Right temple */
+.temple1-right {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+/* Keep content above images */
+.updates h2,
+.updates-list {
+  position: relative;
+  z-index: 2;
+}
+
 
 .updates h2 {
   text-align: center;
@@ -248,10 +282,79 @@
 .contact-form button:hover {
   background: #d32f2f;
 }
+.contact-section {
+  position: relative;
+  overflow: hidden; /* prevents layout expansion */
+}
+
+/* Temple common */
+.temple5 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 520px;
+  height: 700px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.50;
+  z-index: 0;
+}
+
+/* Left */
+.temple5-left {
+  left: 0;
+}
+
+/* Right */
+.temple5-right {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+/* Keep form above images */
+.contact-container {
+  position: relative;
+  z-index: 2;
+}
+
 
 .trust-section {
-  padding: 40px 20px;
-  background: #fff6e5; /* soft temple tone */
+  position: relative;
+  overflow: hidden; /* prevents layout expansion */
+}
+
+/* Temple common style */
+.temple2 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 260px;
+  height: 300px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.75;
+  z-index: 0;
+}
+
+/* Left */
+.temple2-left {
+  left: 0;
+}
+
+/* Right */
+.temple2-right {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+/* Keep content above images */
+.trust-section h2,
+.trust-subtitle,
+.trust-container {
+  position: relative;
+  z-index: 2;
 }
 .trust-section h2 {
   text-align: center;
@@ -297,6 +400,7 @@
   font-weight: 500;
   color: #333;
 }
+
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -396,6 +500,42 @@
   border-right: 1px solid #0e0a00;
   border-top: 1px solid #0e0a00;
   border-bottom: 1px solid #0e0a00;
+}
+.faq-section {
+  position: relative;
+  overflow: hidden; /* prevents layout expansion */
+}
+
+/* Temple common style */
+.temple4 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 560px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  opacity: 0.5;
+  z-index: 0;
+}
+
+/* Left */
+.temple4-left {
+  left: 0;
+}
+
+/* Right */
+.temple4-right {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+/* Keep FAQ content above images */
+.faq-section h2,
+.faq-section .faq-container {
+  position: relative;
+  z-index: 2;
 }
 
 .home-packages {
@@ -583,6 +723,46 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+.reviews-section {
+  position: relative;
+  overflow: hidden; /* prevents layout break */
+}
+
+/* Temple common style */
+.temple3 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 240px;
+  height: 560px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.6;
+  z-index: 0;
+}
+
+/* Left */
+.temple3-left {
+  left: 0;
+}
+
+/* Right */
+.temple3-right {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+/* Keep slider & content above images */
+.reviews-section h2,
+.reviews-section h3,
+.reviews-section .reviews-subtitle,
+.reviews-section .reviews-slider-wrapper {
+  position: relative;
+  z-index: 2;
+}
+
+
 
 /* Review Card */
 .review-card {
@@ -734,10 +914,10 @@
   object-fit: cover;
 }
 .hero-simple {
-  padding-top: 10px; 
-  padding-right: 10px; 
+  /* padding-top: 10px;  */
+  /* padding-right: 10px; 
   padding-bottom: 10px;  
-  padding-left: 10px;
+  padding-left: 10px; */
   text-align: center;
   background: #fff6e5; /* soft temple tone */
 }
@@ -759,7 +939,7 @@
   margin: 0 auto;
 
   text-align: center;
-  padding: 40px 30px;
+  /* padding: 40px 30px; */
 
   background: #ffffff;
   border-radius: 8px;
@@ -796,8 +976,8 @@
   z-index: 2;
   max-width: 700px;
   text-align: center;
-  padding: 24px 28px;
-  background: rgba(255, 255, 255, 0.92);
+  /* padding: 24px 28px; */
+  background: #fff6e5;
   border-radius: 12px;
 }
 
@@ -821,7 +1001,7 @@
 
   .hero-content {
     margin: 0 16px;
-    padding: 20px;
+    /* padding: 20px; */
   }
 
   .hero-content h1 {
@@ -829,7 +1009,7 @@
   }
 }
 section {
-  padding: 60px 20px;
+  padding: 20px 20px;
 }
 
 section h2 {
@@ -931,7 +1111,7 @@ section:last-of-type {
   position: absolute;   /* 🔥 change from fixed */
   top: 150px;
   width: 260px;
-  background: url('/assets/images/temple-outline.jpg') no-repeat center;
+  /* background: url('/assets/temple-outline.png') no-repeat center; */
   /* opacity: 0.06; */
   filter: grayscale(100%);
   pointer-events: none;
@@ -946,3 +1126,95 @@ section:last-of-type {
   right: 0;
   transform: scaleX(-1);
 }
+.temple-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 240px; /* Adjust width here */
+  /* background-image: url('assets/images/temple-art.jpg'); */
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  /* opacity: 0.75; Adjust visibility */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Left Side */
+.temple-bg.left {
+  left: 0;
+}
+
+/* Right Side */
+.temple-bg.right {
+  right: 0;
+  transform: scaleX(-1); /* Mirror effect */
+}
+.hero-simple {
+  position: relative;
+  padding: 10px 10px 10px 10px;
+  text-align: center;
+  background-color: #fff6e5;
+  overflow: hidden; /* prevents layout expansion */
+}
+
+/* Center content */
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* Temple common */
+.temple {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 450px;
+  height: 560px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.75;
+  z-index: 1;
+  border-left: 2px solid #ffb703;
+  border-right: 2px solid #ffb703;
+  border-top: 2px solid #ffb703;
+  border-bottom: 2px solid #ffb703;
+}
+
+/* Left */
+.temple-left {
+  left: 0;
+}
+
+/* Right */
+.temple-right {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}
+.temple6 {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  height: 260px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.75;
+  z-index: 1;
+}
+
+/* Left */
+.temple6-left {
+  left: 0;
+}
+
+/* Right */
+.temple6-right {
+  right: 0;
+  transform: translateY(-50%) scaleX(-1);
+}
+

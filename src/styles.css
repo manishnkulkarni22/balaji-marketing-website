@@ -18,15 +18,12 @@
 
   --shadow-soft: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+
+
 * {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-body {
-  margin: 0;
-  color: var(--text-primary);
-  background-color: var(--bg-light);
-}
 * {
   margin: 0;
   padding: 0;
@@ -73,16 +70,11 @@ h1, h2, h3 {
 html, body {
   font-family: 'Poppins', sans-serif;
   color: #444;
-  background-color: #fff;
+  /* background-color: #fff; */
   line-height: 1.6;
+  height: 100%;
 }
-:root {
-  --primary: #0a58ca;
-  --accent: #e63946;
-  --text-dark: #111;
-  --text-light: #666;
-  --border-light: #eee;
-}
+
 h1, h2, h3, h4, h5 {
   color: var(--text-dark);
   font-weight: 600;
@@ -242,12 +234,52 @@ html, body {
 }
 
 body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  color: #444;
+  line-height: 1.6;
+
+  background-color: #fff6e5;
+
+  /* Temple background */
+  background-image: url('/assets/images/temple-art.jpg');
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 900px auto;
+
   display: flex;
   flex-direction: column;
 }
 
+/* Soft overlay to make it elegant */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 246, 229, 0.92);
+  z-index: -1;
+  pointer-events: none;
+}
 main {
   flex: 1;
+}
+@media (max-width: 1024px) {
+  body {
+    background-size: 600px auto;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    background-size: 400px auto;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background-size: 280px auto;
+    background-position: center bottom;
+  }
 }
 
 
