@@ -120,22 +120,23 @@ button:disabled {
   position: absolute;
   top: 40%;
   transform: translateY(-50%);
-  width: 240px;
-  height: 320px;
+  width: 280px;
+  height: 420px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.6;
+  opacity: 0.15;
+  filter: blur(0.5px);
   z-index: 0;
 }
 
 /* Left */
 .temple3-left {
-  left: 0;
+  left: -40px;
 }
 
 /* Right */
 .temple3-right {
-  right: 0;
+  right: -40px;
   transform: translateY(-50%) scaleX(-1);
 }

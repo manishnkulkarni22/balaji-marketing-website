@@ -89,25 +89,26 @@ main {
 /* Temple common */
 .temple {
   position: absolute;
-  top: 20%;
+  top: 30%;
   transform: translateY(-50%);
   width: 320px;
   height: 260px;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.75;
+  opacity: 0.35;
+  filter: blur(0.5px);
   z-index: 1;
 }
 
 /* Left */
 .temple-left {
-  left: 0;
+  left: -40px;
 }
 
 /* Right */
 .temple-right {
-  right: 0;
+  right: -40px;
   transform: translateY(-50%) scaleX(-1);
 }
 

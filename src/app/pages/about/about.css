@@ -74,24 +74,25 @@
 }
 .temple1 {
   position: absolute;
-  top: 30%;
+  top: 40%;
   transform: translateY(-50%);
-   width: 360px;
+   width: 320px;
   height: 560px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  opacity: 0.60;
+  opacity: 0.15;
+  filter: blur(0.5px);
   z-index: 0;
 }
 
 /* Left temple */
 .temple1-left {
-  left: 0;
+  left: -40px;
 }
 
 /* Right temple */
 .temple1-right {
-  right: 0;
+  right: -40px;
   transform: translateY(-50%) scaleX(-1);
 }
