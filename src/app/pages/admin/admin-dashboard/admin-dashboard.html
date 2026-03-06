@@ -1,0 +1,24 @@
+<h1>Balaji Darshan Admin Panel</h1>
+
+<button (click)="logout()">Logout</button>
+
+<hr>
+
+<h2>Admin Dashboard</h2>
+
+<p>Welcome Admin</p>
+
+<ul>
+  <li>Manage Packages</li>
+  <li>Manage Bookings</li>
+  <li>Manage Users</li>
+</ul>
+<h2>Add Package</h2>
+
+<input [(ngModel)]="name" placeholder="Package Name">
+
+<input [(ngModel)]="location" placeholder="Location">
+
+<input [(ngModel)]="priceNote" placeholder="Price">
+
+<button (click)="addPackage()">Add Package</button>

@@ -4,6 +4,8 @@ import { Packages } from './pages/packages/packages';
 import { About } from './pages/about/about';
 import { Contact } from './pages/contact/contact';
 import { PackageDetails } from './pages/package-details/package-details';
+import { AdminDashboard } from './pages/admin/admin-dashboard/admin-dashboard';
+
 
 export const routes: Routes = [
   { path: '', component: Home },
@@ -18,5 +20,14 @@ export const routes: Routes = [
   { path: 'about', component: About },
   { path: 'contact', component: Contact },
 
+  {
+   path: 'admin-login',
+  loadComponent: () => import('./pages/admin-login/admin-login')
+ .then(m => m.AdminLoginComponent)
+},
+{ path: '', redirectTo: 'admin-login', pathMatch: 'full' },
 
+  // { path: 'admin-login', component: AdminLoginComponent },
+
+  { path: 'admin-dashboard', component: AdminDashboard }
 ];

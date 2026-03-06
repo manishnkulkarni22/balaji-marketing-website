@@ -4,6 +4,7 @@ import { Header } from './shared/header/header';
 import { Footer } from './shared/footer/footer';
 import { StickyCta } from './shared/sticky-cta/sticky-cta';
 import { HostListener } from '@angular/core';
+import { FirebaseTestService } from './services/firebase-test.service';
 
 
 @Component({
@@ -13,6 +14,12 @@ import { HostListener } from '@angular/core';
   styleUrl: './app.css'
 })
 export class App {
+  constructor(private firebaseTest: FirebaseTestService) {}
+
+ngOnInit() {
+  this.firebaseTest.testWrite();
+}
+
   @HostListener('window:scroll', [])
   onScroll(): void {
     const cta = document.getElementById('stickyCta');
